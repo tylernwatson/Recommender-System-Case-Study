@@ -3,8 +3,13 @@
 ### Tyler Watson & Kevin Magaña, Dec. 17th, 2017
 
 ## The Challenge: 
-Build a recommender system based off of data from the Jester Dataset, which includes user ratings of over 100 jokes. The Berkley 
-dataset includes over a million user ratings. 
+Build a recommender system based off of data from the Jester Dataset, which includes user ratings of over 100 jokes. The Berkley dataset includes over a million user ratings. 
+
+- Task: Build a recommendation system for jokes
+- Data: User ratings ranging from -10 to 10
+- Scoring: Mean rating for top 5% of jokes predicted by recommender
+- Tools: GraphLab, Pandas
+
 
 ## Exploratory Data Analysis 
 
