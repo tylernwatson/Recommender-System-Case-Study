@@ -9,7 +9,7 @@ dataset includes over a million user ratings.
 ## Exploratory Data Analysis 
 
 <p align="center"> 
-<img src="images/ratings.png">
+<img src="images/ratings_green.png">
 </p>
 
 ## The Goal: 
