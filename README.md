@@ -1,4 +1,4 @@
-# Recommender-System-Case-Study
+# Recommender System Case Study
 ### By: Tyler Watson & Kevin Magaña, December 18th, 2017
 
 ## The Challenge: 
