@@ -11,7 +11,14 @@ The goal is to build a recommendation system to suggest jokes to users. We will 
 ## How: 
 We implemented item similarity recommenders (using cosine, pearson, and jaccard similarity types) and factorization recommenders using GraphLab
 
+<p align="center"> 
+<img src="images/item_similarity_score_vs_similarity_type.png">
+</p>
 
+
+<p align="center"> 
+<img src="images/topk_score_80_96.png">
+</p>
 
 
 
