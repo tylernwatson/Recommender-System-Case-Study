@@ -40,7 +40,7 @@ recommenders using GraphLab.
 - Looks like the best K-nearest items is about 80 
 
 <p align="center"> 
-<img src="r_factorization_scores_vs_num_features.png">
+<img src="images/r_factorization_scores_vs_num_features.png">
 </p>
 - Score vs. Number of latent features
 - 8 Latent features, or the default seems to be produce optimal scores 
