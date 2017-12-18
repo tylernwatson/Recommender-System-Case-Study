@@ -11,7 +11,6 @@ Build a recommender system based off of data from the Jester Dataset, which incl
 <img src="images/ratings.png">
 </p>
 
-
 ## The Goal: 
 The goal is to build a recommendation system to suggest jokes to users. We will measure score will be measured based off of how well you predict the top-rated jokes for the users' ratings in our test set.
 
