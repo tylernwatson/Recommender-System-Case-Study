@@ -32,12 +32,12 @@ def score(df_true, df_predict):
 
     return df_true[top_5==1].mean()['true_rating']
 
-def create_factorization_recommender(sf, only_top_k=64):
+def create_factorization_recommender(sf, num_factors=32):
     m = gl.recommender.item_similarity_recommender.create(observation_data=sf,
                                                         user_id='user_id', item_id='joke_id',
                                                         target='rating',
                                                         similarity_type='pearson',
-                                                        only_top_k=only_top_k)
+                                                        num_factors=num_factors)
     return m
 
 if __name__ == "__main__":
@@ -54,24 +54,27 @@ if __name__ == "__main__":
 
     # Plot scores vs. num_factors
 
-    hyperparameters = [num_factors, similarity_type_list, thresholds, only_top_k_list]
-    only_top_k = list(np.linspace(64,96,num=17))
-    threshold = list(np.linspace(0.0005,.01,num=20))
-    similarity_type = ['pearson', 'cosine', 'jaccard']
-    num_factors = range(51)
+    # hyperparameters = [num_factors, similarity_type_list, thresholds, only_top_k_list]
+
+    # threshold = list(np.linspace(2,64,num=62))
+
+    # similarity_type = ['pearson', 'cosine', 'jaccard']
+    num_factors = range(71)
     scores=[]
-    for h in hyperparameters:
-        for i in h:
-            m = create_factorization_recommender(train_data, i)
-            df_predict['pred_rating'] = m.predict(val_data)
-            rc= score(df_true, df_predict)
-            scores.append(rc)
-            print(h,': ', k, 'Score: ', rc)
-        plt.plot(h, scores)
-        plt.title('Score vs ', h)
-        plt.xlabel(h)
-        plt.ylabel('Score')
-        plt.show()
+
+    for i in num_factors:
+        m = create_factorization_recommender(train_data, num_factors= i)
+
+        df_predict['pred_rating'] = m.predict(val_data)
+        rc= score(df_true, df_predict)
+        scores.append(rc)
+        print(num_factors,': ', i, 'Score: ', rc)
+
+    plt.plot(num_factors, scores)
+    plt.title('Mean Score vs Number of Factors')
+    plt.xlabel("Number of Factors")
+    plt.ylabel('Score')
+    plt.show()
 
     # sample_sub_fname = "data/sample_submission.csv"
     # ratings_data_fname = "data/ratings.dat"
