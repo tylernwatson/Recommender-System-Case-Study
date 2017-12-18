@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
     threshold = list(np.linspace(0.0005,.01,num=20))
     scores=[]
-    for i in h:
+    for i in threshold:
         m = create_factorization_recommender(train_data, threshold=i)
         df_predict['pred_rating'] = m.predict(val_data)
         rc= score(df_true, df_predict)
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
     only_top_k = list(np.linspace(64,96,num=17))
     scores=[]
-    for i in h:
+    for i in only_top_k:
         m = create_factorization_recommender(train_data, only_top_k=i)
         df_predict['pred_rating'] = m.predict(val_data)
         rc= score(df_true, df_predict)
